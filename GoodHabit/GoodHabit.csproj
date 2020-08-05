@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="Resources\Icons\Blink.png" />
+		<None Remove="Resources\Icons\Drink.png" />
+		<None Remove="Resources\Icons\Exercise.png" />
+		<None Remove="Resources\Icons\Roll.png" />
+		<None Remove="Resources\Icons\Walk.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="Resources\Icons\Blink.png" />
+		<Resource Include="Resources\Icons\Drink.png" />
+		<Resource Include="Resources\Icons\Exercise.png" />
+		<Resource Include="Resources\Icons\Roll.png" />
+		<Resource Include="Resources\Icons\Walk.png" />
+	</ItemGroup>
+</Project>
