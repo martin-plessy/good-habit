@@ -1,10 +1,10 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Windows;
 using Microsoft.Win32.TaskScheduler;
+using GoodHabit.Models;
 
-namespace GoodHabit
+namespace GoodHabit.ViewModels
 {
 	public class GoodHabitViewModel : INotifyPropertyChanged
 	{
@@ -31,11 +31,11 @@ namespace GoodHabit
 
 		private static readonly Habit[] Habits = new[]
 		{
-			new Habit { Label = "Blink", Icon = new Uri("Resources/Icons/Blink.png", UriKind.Relative) },
-			new Habit { Label = "Roll your eyes", Icon = new Uri("Resources/Icons/Roll.png", UriKind.Relative) },
-			new Habit { Label = "Exercise", Icon = new Uri("Resources/Icons/Exercise.png", UriKind.Relative) },
-			new Habit { Label = "Walk around", Icon = new Uri("Resources/Icons/Walk.png", UriKind.Relative) },
-			new Habit { Label = "Drink water", Icon = new Uri("Resources/Icons/Drink.png", UriKind.Relative) }
+			new Habit { Label = "Blink", Icon = new Uri("/Resources/Icons/Blink.png", UriKind.Relative) },
+			new Habit { Label = "Roll your eyes", Icon = new Uri("/Resources/Icons/Roll.png", UriKind.Relative) },
+			new Habit { Label = "Exercise", Icon = new Uri("/Resources/Icons/Exercise.png", UriKind.Relative) },
+			new Habit { Label = "Walk around", Icon = new Uri("/Resources/Icons/Walk.png", UriKind.Relative) },
+			new Habit { Label = "Drink water", Icon = new Uri("/Resources/Icons/Drink.png", UriKind.Relative) }
 		};
 
 		private static readonly Random Random = new Random();
@@ -57,7 +57,7 @@ namespace GoodHabit
 				)
 				{
 					// A scheduled task exists with consistent data.
-					RepeatInterval = (int) minutesInterval;
+					RepeatInterval = (int)minutesInterval;
 					IsScheduled = true;
 				}
 				else

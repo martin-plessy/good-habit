@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Windows.Data;
 
-namespace GoodHabit
+namespace GoodHabit.Converters
 {
 	public class ReminderConfigurationLabelConverter : IValueConverter
 	{

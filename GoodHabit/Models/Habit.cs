@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GoodHabit
+namespace GoodHabit.Models
 {
 	public class Habit
 	{
