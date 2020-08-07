@@ -6,18 +6,22 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<None Remove="Resources\Icons\Blink.png" />
-		<None Remove="Resources\Icons\Drink.png" />
-		<None Remove="Resources\Icons\Exercise.png" />
-		<None Remove="Resources\Icons\Roll.png" />
-		<None Remove="Resources\Icons\Walk.png" />
+		<PackageReference Include="TaskScheduler" Version="2.8.20"/>
 	</ItemGroup>
 
 	<ItemGroup>
-		<Resource Include="Resources\Icons\Blink.png" />
-		<Resource Include="Resources\Icons\Drink.png" />
-		<Resource Include="Resources\Icons\Exercise.png" />
-		<Resource Include="Resources\Icons\Roll.png" />
-		<Resource Include="Resources\Icons\Walk.png" />
+		<None Remove="Resources\Icons\Blink.png"/>
+		<None Remove="Resources\Icons\Drink.png"/>
+		<None Remove="Resources\Icons\Exercise.png"/>
+		<None Remove="Resources\Icons\Roll.png"/>
+		<None Remove="Resources\Icons\Walk.png"/>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="Resources\Icons\Blink.png"/>
+		<Resource Include="Resources\Icons\Drink.png"/>
+		<Resource Include="Resources\Icons\Exercise.png"/>
+		<Resource Include="Resources\Icons\Roll.png"/>
+		<Resource Include="Resources\Icons\Walk.png"/>
 	</ItemGroup>
 </Project>

@@ -24,9 +24,10 @@
 >
 	<Window.Resources>
 		<local:UpperCaseConverter x:Key="UpperCaseConverter"/>
+		<local:ReminderConfigurationLabelConverter x:Key="ReminderConfigurationLabelConverter"/>
 
 		<ControlTemplate x:Key="MonochromeButtonTemplate" TargetType="Button">
-			<Border x:Name="ButtonBorder" Background="Black" BorderThickness="2" BorderBrush="White" CornerRadius="2" SnapsToDevicePixels="True">
+			<Border x:Name="ButtonBorder" Cursor="Hand" Background="Black" BorderThickness="2" BorderBrush="White" CornerRadius="2" SnapsToDevicePixels="True">
 				<ContentPresenter Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
 			</Border>
 
@@ -46,33 +47,42 @@
 		</ControlTemplate>
 
 		<Style x:Key="MonochromeButton" TargetType="Button">
-			<Setter Property="Foreground" Value="White"/>
 			<Setter Property="Template" Value="{StaticResource MonochromeButtonTemplate}"/>
+			<Setter Property="Foreground" Value="White"/>
 		</Style>
 	</Window.Resources>
 
-	<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-		<Image
-			Source="{Binding Icon}"
-			Width="96"
-			Height="96"
-		/>
-
-		<TextBlock
-			Text="{Binding Label, Converter={StaticResource UpperCaseConverter}}"
-			Margin="0,12,0,0"
-			TextAlignment="Center"
-		/>
-
+	<DockPanel>
 		<Button
-			Content="OK"
+			Content="{Binding IsScheduled, Mode=OneWay, Converter={StaticResource ReminderConfigurationLabelConverter}}"
 			Style="{StaticResource MonochromeButton}"
-			HorizontalAlignment="Center"
-			Margin="0,12,0,0"
-			Padding="24,10,24,8"
-			Cursor="Hand"
-			TabIndex="1"
-			Click="CloseWindow"
+			DockPanel.Dock="Bottom"
+			HorizontalAlignment="Right"
+			Margin="0,0,24,24"
+			Padding="12,4,12,4"
+			FontSize="16"
+			TabIndex="2"
+			Click="ShowReminderConfigurationDialog"
 		/>
-	</StackPanel>
+
+		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+			<Image Source="{Binding Habit.Icon, Mode=OneTime}" Width="96" Height="96" />
+
+			<TextBlock
+				Text="{Binding Habit.Label, Mode=OneTime, Converter={StaticResource UpperCaseConverter}}"
+				Margin="0,12,0,0"
+				HorizontalAlignment="Center"
+			/>
+
+			<Button
+				Content="OK"
+				Style="{StaticResource MonochromeButton}"
+				HorizontalAlignment="Center"
+				Margin="0,24,0,0"
+				Padding="24,10,24,8"
+				TabIndex="1"
+				Click="CloseWindow"
+			/>
+		</StackPanel>
+	</DockPanel>
 </Window>

@@ -1,0 +1,29 @@
+﻿<Window
+	x:Class="GoodHabit.EditReminderDialog"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:local="clr-namespace:GoodHabit"
+
+	mc:Ignorable="d"
+
+	Title="Reminder Configuration"
+	WindowStyle="ToolWindow"
+	WindowStartupLocation="CenterOwner"
+	SizeToContent="WidthAndHeight"
+	ResizeMode="NoResize"
+>
+	<StackPanel>
+		<StackPanel Orientation="Horizontal" Margin="12,12,12,12">
+			<TextBlock Text="Show reminder every" VerticalAlignment="Center"/>
+			<TextBox x:Name="RepeatIntervalBox" Margin="4,0" Padding="4,2" Width="60" TabIndex="1"/>
+			<TextBlock Text="minute(s)." VerticalAlignment="Center"/>
+		</StackPanel>
+
+		<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+			<Button Content="Save" Padding="4,2" Margin="0,0,12,12" Cursor="Hand" TabIndex="2" Click="SaveReminder"/>
+			<Button Content="Remove" Padding="4,2" Margin="0,0,12,12" Cursor="Hand" TabIndex="3" Click="RemoveReminder" IsEnabled="{Binding IsScheduled, Mode=OneWay}"/>
+		</StackPanel>
+	</StackPanel>
+</Window>
